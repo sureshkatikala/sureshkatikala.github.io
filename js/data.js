@@ -8,9 +8,10 @@ var small_film_set = [
 ];
 
 var desktop_icons = [
-	{ id:"scheduler", title:"Dhtmlx Scheduler", image:"img/scheduler.png", win:"scheduler_win"},
-	{ id:"gantt", title:"Dhtmlx Gantt", image:"img/gantt.png", win:"gantt_win"},
-	{ id:"filemanager", title:"Filemanager", image:"img/filemanager.png", win:"filemanager_win"}
+	 { id:"scheduler", title:"Dhtmlx Scheduler", image:"img/scheduler.png", win:"scheduler_win"},
+	 { id:"gantt", title:"Dhtmlx Gantt", image:"img/gantt.png", win:"gantt_win"},
+	{ id:"filemanager", title:"Filemanager", image:"img/filemanager.png", win:"filemanager_win"},
+    { id:"aceeditor", title:"AceEditor", image:"img/ace-logo.png", win:"aceeditor_win"}
 ];
 
 
@@ -65,14 +66,54 @@ var tasks =  {
 
 
 
-var filemanagerData = [
-	{id:"files", value:"Files", open:true,  type:"folder", date: new Date(2014,2,10,16,10), data:[
-		{ id:"documents", value:"Documents", date: new Date(2014,2,10,16,10),  type:"folder", open:true, data:[
-			{id:"recipies", value:"Recipies", type:"folder", date: new Date(2014,2,10,16,10), data:[
-				{id:"chicken-biryani", value:"Chicken Biryani.json", type:"pp", date:new Date(2014,2,10,16,10), size:"12830"},
-				{id:"mutton-biryani", value:"MuttonBiryani.json",  type:"pp", date: new Date(2014,2,10,16,10), size:"20100"},
-				{id:"veg-biryani", value:"Veg Biryani.json", type:"pp", date: new Date(2014,2,10,16,10), size:"15750"}
-			]},
+var filemanagerData =[{value: 'mychatwidget', id: 'mychatwidget', type: 'folder', data :
+                        [ { value: '.env', id: 'mychatwidget/.env', type: 'text' },
+  { value: '.git', id: 'mychatwidget/.git', type: 'text' },
+  { value: '.gitignore',
+    id: 'mychatwidget/.gitignore',
+    type: 'text' },
+  { value: '.next', id: 'mychatwidget/.next', type: 'text' },
+  { value: 'next.config.js',
+    id: 'mychatwidget/next.config.js',
+    type: 'text' },
+  { value: 'node_modules',
+    id: 'mychatwidget/node_modules',
+    type: 'text' },
+  { value: 'package-lock.json',
+    id: 'mychatwidget/package-lock.json',
+    type: 'text' },
+  { value: 'package.json',
+    id: 'mychatwidget/package.json',
+    type: 'text' },
+  { value: 'pages',
+  id: 'mychatwidget/pages',
+  data: 
+   [ { value: 'index.css',
+       id: 'mychatwidget/pages/index.css',
+       type: 'text' },
+     { value: 'index.js',
+       id: 'mychatwidget/pages/index.js',
+       type: 'text' } ],
+  type: 'folder' }
+,
+  { value: 'server.js',
+    id: 'mychatwidget/server.js',
+    type: 'text' },
+  { value: 'webpage-autochat.tar.gz',
+    id: 'mychatwidget/webpage-autochat.tar.gz',
+    type: 'text' } ]
+
+
+                      }]
+   
+//	{id:"files", value:"Files", open:true,  type:"folder", date: new Date(2014,2,10,16,10), data:[
+//		{ id:"documents", value:"Documents", date: new Date(2014,2,10,16,10),  type:"folder", open:true, data:[
+//			{id:"recipes", value:"Recipes", type:"folder", date: new Date(2014,2,10,16,10), data:[
+//				{id:"chicken-biryani", value:"Chicken Biryani.json", type:"pp", date:new Date(2014,2,10,16,10), size:"12830"},
+//				{id:"mutton-biryani", value:"MuttonBiryani.json",  type:"pp", date: new Date(2014,2,10,16,10), size:"20100"},
+//				{id:"veg-biryani", value:"Veg Biryani.json", type:"pp", date: new Date(2014,2,10,16,10), size:"15750"}
+//			],
+//		},
 			// {id:"reports", value:"Reports",  type:"folder", date:new Date(2014,2,10,16,10), open:true, data:[
 			// 	{id:"usa", value:"USA",  type:"folder", date: new Date(2014,2,10,16,10), data:[
 			// 		{id:"salesUS", value:"Sales USA.ppt",  type:"excel", date:new Date(2014,2,10,16,10), size:"12830"},
@@ -93,7 +134,7 @@ var filemanagerData = [
 			// 		{id:"productsAsia", value:"Products Asia.ppt",  type:"excel", date: new Date(2014,2,10,16,10), size:"20830"}
 			// 	]}
 			// ]}
-		]},
+//		]},
 		// { id:"images", value:"Images", type:"folder", date: new Date(2014,2,10,16,12), open:true, data:[
 		// 	{id:"thumbnails", value:"Thumbnails", type:"folder", date: new Date(2014,2,10,16,12), data:[
 		// 		{id:"thumbnails1", value:"Product 1-th.jpg", type:"image", date: new Date(2014,2,10,16,12), size:"34.83 KB"},
@@ -117,18 +158,18 @@ var filemanagerData = [
 		// 	{id:"video2", value:"Presentation.avi", icon:"file-video-o",type:"video", date: new Date(2014,2,10,16,12), size:"11072000" , pId:"video"},
 		// 	{id:"video3", value:"Conference.avi", icon:"file-video-o", type:"video", date: new Date(2014,2,10,16,12), size:"31256000", pId:"video" }
 		// ]}
-	]}
-];
+//	]}
+//];
 
 
-$$("recipies").attachEvent("onBeforeDelete", function(id){
-    //... some code here ... 
-	//return false to block operation
-    console.log(id);
-	if(id == 'chicken-biryani') {
-		return false;
-	}
-});
+// filemanagerData.attachEvent("onBeforeDelete", function(id){
+//     //... some code here ... 
+// 	//return false to block operation
+// 	if(id == 'chicken-biryani') {
+// 		return false;
+// 	}
+// });
+
 
 var winmenu_1 = [
 	{ value:"Calendar", id:"calendar", icon:"calendar", color:"#107c10", x:1, y:1 },
