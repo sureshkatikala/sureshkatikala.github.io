@@ -387,7 +387,7 @@ if (window.desktopApp)
 //                        }
 //						});
 
-                        $$("filemanager").load("http://ec2-18-219-87-48.us-east-2.compute.amazonaws.com:3000/loadfiles");
+                        $$("filemanager").load("https://ec2-18-219-87-48.us-east-2.compute.amazonaws.com:3000/loadfiles");
 						$$("filemanager").attachEvent("onBeforeDeleteFile", function(id){
 							// your code
 							if(id == 'recipes') {
