@@ -328,6 +328,7 @@ if (window.desktopApp)
                     
                     
                     
+                    
 				}
 			},
             
@@ -423,6 +424,11 @@ if (window.desktopApp)
                             }
 						});
 					},
+                    onItemSelect : function(id, value, type) {
+                        console.log(value, id, type);
+                        
+                    },
+                    
                     
 //                    onItemClick : function(id) {
 //                        if (id == "newFile") {
