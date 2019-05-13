@@ -30,20 +30,35 @@ desktopApp = {
 	},
 
 	createContextMenu: function () {
-		webix.ui({
+		let submenuData = [ 
+			"Dish",
+			"Ingredient", 
+			"Menu",
+			"Packaging",
+			"Recipe",
+			];
+		var contextmenu = webix.ui({
             id: "contextmenu",
 			view:"contextmenu",
 			data:[
-				{ value:"Add New File", submenu:[ 
-				"Dish",
-				"Ingredient", 
-				"Menu",
-				"Packaging",
-				"Recipe",
-				]},
+				{ value:"Add New File", submenu:submenuData},
+	
 				// { value:"Info" }
 			],
+			on: {
+				onMenuItemClick: function(id){
+					var context = this.getContext();
+					var list = context.obj; //list item object
+					var listId = context.id; //id of the clicked list item
+					console.log(context);
+					console.log(id);
+					if(submenuData.includes(id)) {
+						desktopApp.wins.showApp("aceeditor", "Adding a " + id + " file");
+					}
+				}
+			}
 		});
+		// contextmenu.attachEvent()		
 	},
 
 	createLayout: function () {

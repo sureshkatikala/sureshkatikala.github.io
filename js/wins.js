@@ -321,14 +321,14 @@ if (window.desktopApp)
 					onBeforeShow: function () {
 						desktopApp.beforeWinShow("aceeditor");
 					},
-                    onkeypress: function(){
+                    onTimedKeyPress: function(){
                         console.log("Key Press Occured");
                         console.log($$('editor').getValue());
                     },
-                    
-                    
-                    
-                    
+                    onclose: function(){
+                        console.log($$('editor').getValue());
+
+                    }
 				}
 			},
             
@@ -456,7 +456,7 @@ if (window.desktopApp)
 let editor = function(){
     desktopApp.wins.showApp("aceeditor", "{new : data}");
     console.log($$("editor"));
-    console.log($$("editor").getValue());
+//    console.log($$("editor").getValue());
 }
 
 
