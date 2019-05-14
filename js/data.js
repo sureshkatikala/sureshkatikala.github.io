@@ -11,7 +11,10 @@ var desktop_icons = [
 	 { id:"scheduler", title:"Dhtmlx Scheduler", image:"img/scheduler.png", win:"scheduler_win"},
 	 { id:"gantt", title:"Dhtmlx Gantt", image:"img/gantt.png", win:"gantt_win"},
 	{ id:"filemanager", title:"Filemanager", image:"img/filemanager.png", win:"filemanager_win"},
-    { id:"aceeditor", title:"AceEditor", image:"img/ace-logo.png", win:"aceeditor_win"}
+    { id:"aceeditor", title:"AceEditor", image:"img/aceeditor.png", win:"aceeditor_win"},
+    { id:"orders", title:"Orders List", image:"img/orders.png", win:"orders_win"},
+    { id:"recipes", title:"Recipes", image:"img/recipes.png", win:"recipes_win"}
+
 ];
 
 

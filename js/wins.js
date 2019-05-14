@@ -284,7 +284,7 @@ if (window.desktopApp)
 						"Ace Editor",
 						function () {
 							$$('aceeditor_win').hide();
-						//	webix.html.removeCss($$("aceeditor_button").$view, "active");
+							webix.html.removeCss($$("aceeditor_button").$view, "active");
 						},
 						function () {
 							$$("aceeditor_win").config.fullscreen = !$$("aceeditor_win").config.fullscreen;
@@ -292,14 +292,14 @@ if (window.desktopApp)
 
 							aceeditor.render();
 						}, function () {
-							//$$("toolbar").removeView("aceeditor_button");
+							$$("toolbar").removeView("aceeditor_button");
 							$$('aceeditor_win').hide();
 							desktopApp.buttonCount--;
 						}
 					]
 				},
 				body: function (editorValue) {
-                    console.log("1");
+                    console.log("This is editor value", editorValue);
                     editorValue = editorValue || "";
 					return {
                         
@@ -329,6 +329,103 @@ if (window.desktopApp)
                         console.log($$('editor').getValue());
 
                     }
+				}
+			},
+            
+//            var iframe = webix.ui({     
+//    view:"iframe", 
+//    id:"frame-body", 
+//    src:"//docs.webix.com/samples/80_docs/data/pageA.html"
+//});
+            orders: {
+				toolbar: function () {
+					return [
+						"Orders",
+						function () {
+							$$('orders_win').hide();
+							webix.html.removeCss($$("orders_button").$view, "active");
+						},
+						function () {
+							$$("orders_win").config.fullscreen = !$$("orders_win").config.fullscreen;
+							$$("orders_win").resize();
+
+							aceeditor.render();
+						}, function () {
+							$$("toolbar").removeView("orders_button");
+							$$('orders_win').hide();
+							desktopApp.buttonCount--;
+						}
+					]
+				},
+				body: function () {
+					return {
+                        id: "frame",
+                        view: "iframe",
+                        src: "http://groctaurantretail.com/admin/zxy321/orders.php", // code string
+//                        width: "200",
+//                        height: "200"
+
+//						view: "dhx-gantt",
+//						id: "gantt",
+//						init: function () {
+//							//do nothing
+//						},
+//						ready: function () {
+//							gantt.parse(tasks);
+//						}
+					}
+				},
+				events: {
+					onBeforeShow: function () {
+						desktopApp.beforeWinShow("orders");
+					},
+                  
+				}
+			},
+            
+             recipes: {
+				toolbar: function () {
+					return [
+						"Recipes",
+						function () {
+							$$('recipes_win').hide();
+							webix.html.removeCss($$("recipes_button").$view, "active");
+						},
+						function () {
+							$$("recipes_win").config.fullscreen = !$$("recipes_win").config.fullscreen;
+							$$("recipes_win").resize();
+
+							aceeditor.render();
+						}, function () {
+							$$("toolbar").removeView("recipes_button");
+							$$('recipes_win').hide();
+							desktopApp.buttonCount--;
+						}
+					]
+				},
+				body: function () {
+					return {
+                        id: "frame",
+                        view: "iframe",
+                        src: "http://groctaurantretail.com/admin/zxy321/recipe.php", // code string
+//                        width: "200",
+//                        height: "200"
+
+//						view: "dhx-gantt",
+//						id: "gantt",
+//						init: function () {
+//							//do nothing
+//						},
+//						ready: function () {
+//							gantt.parse(tasks);
+//						}
+					}
+				},
+				events: {
+					onBeforeShow: function () {
+						desktopApp.beforeWinShow("recipes");
+					},
+                  
 				}
 			},
             

@@ -9,6 +9,7 @@ desktopApp = {
 		this.createContextMenu();
 //		$$('contextmenu').attachTo($$('screens'));
         $$("contextmenu").attachTo(document.getElementsByClassName(" webix_full_screen")[0]);
+//        $$("editor").setValue("Hello");
 
 
 		// var actions = $$("screens").getMenu();
