@@ -13,7 +13,9 @@ var desktop_icons = [
 	{ id:"filemanager", title:"Filemanager", image:"img/filemanager.png", win:"filemanager_win"},
     { id:"aceeditor", title:"AceEditor", image:"img/aceeditor.png", win:"aceeditor_win"},
     { id:"orders", title:"Orders List", image:"img/orders.png", win:"orders_win"},
-    { id:"recipes", title:"Recipes", image:"img/recipes.png", win:"recipes_win"}
+    { id:"recipes", title:"Recipes", image:"img/recipes.png", win:"recipes_win"},
+    { id:"crm", title:"crm", image:"img/crm.png", win:"crm_win"}
+
 
 ];
 

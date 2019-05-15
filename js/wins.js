@@ -429,6 +429,52 @@ if (window.desktopApp)
 				}
 			},
             
+            crm: {
+				toolbar: function () {
+					return [
+						"CRM",
+						function () {
+							$$('crm_win').hide();
+							webix.html.removeCss($$("crm_button").$view, "active");
+						},
+						function () {
+							$$("crm_win").config.fullscreen = !$$("crm_win").config.fullscreen;
+							$$("crm_win").resize();
+
+							aceeditor.render();
+						}, function () {
+							$$("toolbar").removeView("crm_button");
+							$$('crm_win').hide();
+							desktopApp.buttonCount--;
+						}
+					]
+				},
+				body: function () {
+					return {
+                        id: "frame",
+                        view: "iframe",
+                        src: "http://groctaurantretail.com/admin/zxy321/crm.php", // code string
+//                        width: "200",
+//                        height: "200"
+
+//						view: "dhx-gantt",
+//						id: "gantt",
+//						init: function () {
+//							//do nothing
+//						},
+//						ready: function () {
+//							gantt.parse(tasks);
+//						}
+					}
+				},
+				events: {
+					onBeforeShow: function () {
+						desktopApp.beforeWinShow("crm");
+					},
+                  
+				}
+			},
+            
 			filemanager: {
 				css: "no_border ",
 				toolbar: function () {
