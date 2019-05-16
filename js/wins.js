@@ -475,6 +475,53 @@ if (window.desktopApp)
 				}
 			},
             
+            merchants: {
+				toolbar: function () {
+					return [
+						"Merchants",
+						function () {
+							$$('merchants_win').hide();
+							webix.html.removeCss($$("merchants_button").$view, "active");
+						},
+						function () {
+							$$("merchants_win").config.fullscreen = !$$("merchants_win").config.fullscreen;
+							$$("merchants_win").resize();
+
+							aceeditor.render();
+						}, function () {
+							$$("toolbar").removeView("merchants_button");
+							$$('merchants_win').hide();
+							desktopApp.buttonCount--;
+						}
+					]
+				},
+				body: function () {
+					return {
+                        id: "frame",
+                        view: "iframe",
+                        src: "http://groctaurantretail.com/admin/zxy321/merchant.php", // code string
+//                        width: "200",
+//                        height: "200"
+
+//						view: "dhx-gantt",
+//						id: "gantt",
+//						init: function () {
+//							//do nothing
+//						},
+//						ready: function () {
+//							gantt.parse(tasks);
+//						}
+					}
+				},
+				events: {
+					onBeforeShow: function () {
+						desktopApp.beforeWinShow("merchants");
+					},
+                  
+				}
+			},
+
+            
 			filemanager: {
 				css: "no_border ",
 				toolbar: function () {

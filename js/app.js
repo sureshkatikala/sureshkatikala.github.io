@@ -63,26 +63,28 @@ desktopApp = {
 	},
 
 	createLayout: function () {
+        console.log(desktop_icons);
 		webix.ui({
 			id: "screens",
 			animate: false,
-			cells: [
+			cells: 
+            [
 				{
-					view: "layout",
+					view:"layout",
 					id: "main",
-					css: "desktop-layout",
+					css:"desktop-layout",
 					type: "clean",
-					cols: [
+					cols:[
 						{
 							view: "list",
 							id: "desktop",
 							width: 105,
-							css: "desktop-items",
+							css:"desktop-items",
 
 							type: {
 								height: 110,
-								template: "<div id='desktop-screen' class='desktop-item-inner'><img src='#image#'><div class='desktop-icons'> #title#</div></div>",
-								css: "desktop-item"
+								template: "<div class='desktop-item-inner'><img src='#image#'><div class='desktop-icons'> #title#</div></div>",
+								css:"desktop-item"
 							},
 							select: "multiselect",
 							drag: true,
@@ -93,7 +95,29 @@ desktopApp = {
 						},
 						{}
 					]
-				},
+                    },//[
+//						{
+//							view: "list",
+//							id: "desktop",
+//							width: 105,
+//							css: "desktop-items",
+//
+//							type: {
+//								height: 110,
+//								template: "<div id='desktop-screen' class='desktop-item-inner'><img src='#image#'><div class='desktop-icons'> #title#</div></div>",
+//								css: "desktop-item"
+//							},
+//							select: "multiselect",
+//							drag: true,
+//							data: webix.copy(desktop_icons),
+//							on: {
+//								onItemDblClick: desktopApp.wins.showApp
+//							}
+//						},
+//						{}
+                        
+//					]
+				// },
 				{
 					id: "sign-in",
 					css: "sign-in",
@@ -416,4 +440,37 @@ desktopApp = {
 		}
 	}
 };
-
+//
+//function(desktop_icons){
+//                        console.log(desktop_icons);
+//                        let returnArray = [];
+//                        let columns = desktop_icons/6;
+//                        console.log(columns);
+//                        
+//                        for(let i=0; i<columns; i++){
+//                            
+//                            let returnObject = {
+//                                view: "list",
+//                                id: "desktop",
+//                                width: 105,
+//                                css: "desktop-items",
+//
+//                                type: {
+//                                    height: 110,
+//                                    template: "<div id='desktop-screen' class='desktop-item-inner'><img src='#image#'><div class='desktop-icons'> #title#</div></div>",
+//                                    css: "desktop-item"
+//                                },
+//                                select: "multiselect",
+//                                drag: true,
+//                                data: webix.copy(desktop_icons),
+//                                on: {
+//                                    onItemDblClick: desktopApp.wins.showApp
+//                                }
+//                            }
+//                            
+//                            returnArray.push(returnObject);
+//                            columns--;
+//                        }
+//                        console.log(returnArray)
+//                        return returnArray;
+//                    }
