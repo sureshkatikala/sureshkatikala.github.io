@@ -522,6 +522,41 @@ if (window.desktopApp)
 			},
 
             
+            accounting: {
+				toolbar: function () {
+					return [
+						"Accounting",
+						function () {
+							$$('accounting_win').hide();
+							webix.html.removeCss($$("accounting_button").$view, "active");
+						},
+						function () {
+							$$("accounting_win").config.fullscreen = !$$("accounting_win").config.fullscreen;
+							$$("accounting_win").resize();
+
+							aceeditor.render();
+						}, function () {
+							$$("toolbar").removeView("accounting_button");
+							$$('accounting_win').hide();
+							desktopApp.buttonCount--;
+						}
+					]
+				},
+				body: function () {
+					return {
+                        id: "frame",
+                        view: "iframe",
+                        src: "http://groctaurantretail.com/admin/zxy321/accounting.php",
+					}
+				},
+				events: {
+					onBeforeShow: function () {
+						desktopApp.beforeWinShow("accounting");
+					},
+                  
+				}
+			},
+            
 			filemanager: {
 				css: "no_border ",
 				toolbar: function () {
