@@ -557,6 +557,41 @@ if (window.desktopApp)
 				}
 			},
             
+            deliveredAndRejectedOrders: {
+				toolbar: function () {
+					return [
+						"Delivered and Rejected Orders",
+						function () {
+							$$('deliveredAndRejectedOrders_win').hide();
+							webix.html.removeCss($$("deliveredAndRejectedOrders_button").$view, "active");
+						},
+						function () {
+							$$("deliveredAndRejectedOrders_win").config.fullscreen = !$$("deliveredAndRejectedOrders_win").config.fullscreen;
+							$$("deliveredAndRejectedOrders_win").resize();
+
+							aceeditor.render();
+						}, function () {
+							$$("toolbar").removeView("deliveredAndRejectedOrders_button");
+							$$('deliveredAndRejectedOrders_win').hide();
+							desktopApp.buttonCount--;
+						}
+					]
+				},
+				body: function () {
+					return {
+                        id: "frame",
+                        view: "iframe",
+                        src: "http://groctaurantretail.com/admin/zxy321/ordersproccessed.php",
+					}
+				},
+				events: {
+					onBeforeShow: function () {
+						desktopApp.beforeWinShow("deliveredAndRejectedOrders");
+					},
+                  
+				}
+			},
+            
 			filemanager: {
 				css: "no_border ",
 				toolbar: function () {
