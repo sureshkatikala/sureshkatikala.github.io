@@ -59,19 +59,19 @@ desktopApp = {
 	createLayout: function(){
 		let allIcons = desktop_icons;
 		let totalIcons = desktop_icons.length;
-		let columns = parseInt(totalIcons/6);
+		let columns = parseInt(totalIcons/5);
 		let outerArray=[];
 		for(let i=0; i <= columns; i++){
 			if(i==columns) {
 				let innerArray = [];
-				for(let j=1*6; j< totalIcons; j++) {
+				for(let j=1*5; j< totalIcons; j++) {
 					innerArray.push(allIcons[j]);
 				}
 				outerArray.push(innerArray)
 
 			} else {
 				let innerArray = [];
-				for(let j= i*6 ; j < (i+1)*6; j++){
+				for(let j= i*5 ; j < (i+1)*5; j++){
 					innerArray.push(allIcons[j]);
 				}
 				outerArray.push(innerArray);
@@ -83,7 +83,7 @@ desktopApp = {
             let columnObject = {
 							view: "list",
 							//id: "desktop",
-							width: 105,
+							width: 140,
 							css:"desktop-items",
 
 							type: {
