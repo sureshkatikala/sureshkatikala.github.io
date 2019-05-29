@@ -15,9 +15,9 @@ var desktop_icons = [
     { id:"orders", title:"Order Dashboard", image:"img/orders.png", win:"orders_win"},
     { id:"recipes", title:"Recipe Manager", image:"img/recipes.png", win:"recipes_win"},
     { id:"crm", title:"crm", image:"img/crm.png", win:"crm_win"},
-    { id:"merchants", title:"Merchants", image:"img/merchant.png", win:"merchants_win"},
+    { id:"merchants", title:"Merchants", image:"img/merchants.png", win:"merchants_win"},
     { id:"accounting", title:"Accounting", image:"img/accounting.png", win:"accounting_win"},
-    { id:"deliveredAndRejectedOrders", title:"Delivered & Rejected Orders", image:"img/deliveredorders.png", win:"deliveredAndRejectedOrders_win"},
+    { id:"deliveredAndRejectedOrders", title:"Delivered & Rejected Orders", image:"img/deliveredAndRejectedOrders.png", win:"deliveredAndRejectedOrders_win"},
 
 ];
 
